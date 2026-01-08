@@ -1,0 +1,42 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="container">
+    <h1>GUESS THE NUMBER</h1>
+    <p class="subtitle">Pick a number between 1 and 10</p>
+
+    <input id="guessnumber" type="number" min="1" max="10">
+    <button onclick="check()">Check</button>
+
+    <p id="result"></p>
+    <p id="score">Score: 10</p>
+
+    <div class="footer">🎯 Good luck!</div>
+</div>
+
+
+<script>
+     var guessnumber = document.getElementById("guessnumber")
+     var result=document.getElementById("result")
+     var score=document.getElementById("score")
+     var randomNumber=Math.floor(Math.random()*10)+1
+     var totalscore=10
+     function check()
+     {
+          var enterednumber = guessnumber.value
+          if(randomNumber==enterednumber)
+          {
+               console.log("Right")
+               result.textContent="Right"
+               alert("YOU WON!!!")
+
+          }
+          else{
+               totalscore=totalscore-1
+               score.textContent="score:"+totalscore
+               result.textContent="wrong"
+          }
+
+     }
+</script>
